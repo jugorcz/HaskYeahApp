@@ -59,12 +59,13 @@ public class NumbersPage {
         root.setSpacing(rootSpacing);
         hbox.setPadding(new Insets(topMarg, rightMarg, bottomMarg, leftMarg));
         hbox.setSpacing(rootSpacing);
+        hbox.setAlignment(Pos.CENTER);
     }
 
     public void showNumbersPage(){
         int chosen;
         chosen = number.generatorOneNumber();
-        this.imageView = getImage(chosen);
+        this.imageView = new ImageView(getImage(chosen));
 
         Button prevBttn = new Button("<-");
         prevBttn.setId("loginBttn");
@@ -80,7 +81,7 @@ public class NumbersPage {
         nextBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                
+                handleArrow();
             }
         });
 
@@ -104,10 +105,10 @@ public class NumbersPage {
     public void handleArrow(){
         int chosen;
         chosen = number.generatorOneNumber();
-        this.imageView = getImage(chosen);
+        this.imageView.setImage(getImage(chosen));
     }
 
-    public ImageView getImage(int chosen){
+    public Image getImage(int chosen){
         Image image = null;
         switch(chosen) {
             case 0: {
@@ -154,8 +155,7 @@ public class NumbersPage {
 
         }
 
-        ImageView imageView = new ImageView(image);
-        return imageView;
+        return image;
     }
 
 }
