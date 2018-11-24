@@ -14,3 +14,8 @@
 
 }
 
+#inner{
+    -fx-background-color:grey;
+    -fx-pref-width: 350px;
+    -fx-pref-height: 350px;
+}

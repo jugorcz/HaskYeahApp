@@ -17,10 +17,10 @@ import javafx.stage.StageStyle;
 
 public class NumbersPage {
     private Stage owner;
-    private int widthScene=650;
-    private int heightScene=600;
-    private int widthStage=650;
-    private int heightStage=600;
+    private int widthScene=850;
+    private int heightScene=700;
+    private int widthStage=850;
+    private int heightStage=700;
     private String title = "Numbers";
     private Scene scene;
     private VBox root;
@@ -39,7 +39,9 @@ public class NumbersPage {
         owner = new Stage(StageStyle.DECORATED);
         root = new VBox();
         scene = new Scene(root, widthScene, heightScene);
+        scene.getStylesheets().add(StarterPage.class.getResource("../stylesheet/desktop.css").toExternalForm());
         hbox = new HBox();
+        hbox.setId("inner");
         setStageProperty();
         setHBoxProperty();
         number = new NumbersController("");
@@ -68,7 +70,7 @@ public class NumbersPage {
         this.imageView = new ImageView(getImage(chosen));
 
         Button prevBttn = new Button("<-");
-        prevBttn.setId("loginBttn");
+        prevBttn.setId("right");
         prevBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -77,7 +79,7 @@ public class NumbersPage {
         });
 
         Button nextBttn = new Button("->");
-        nextBttn.setId("loginBttn");
+        nextBttn.setId("left");
         nextBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -86,7 +88,7 @@ public class NumbersPage {
         });
 
         Button backBttn = new Button("BACK");
-        backBttn.setId("go");
+        backBttn.setId("back");
         backBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {

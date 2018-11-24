@@ -17,10 +17,10 @@ import javafx.stage.StageStyle;
 
 public class NumberChoosePage {
     private Stage owner;
-    private int widthScene=650;
-    private int heightScene=600;
-    private int widthStage=650;
-    private int heightStage=600;
+    private int widthScene=850;
+    private int heightScene=700;
+    private int widthStage=850;
+    private int heightStage=700;
     private String title = "Numbers";
     private Scene scene;
     private VBox root;
@@ -37,7 +37,9 @@ public class NumberChoosePage {
         owner = new Stage(StageStyle.DECORATED);
         root = new VBox();
         scene = new Scene(root, widthScene, heightScene);
+        scene.getStylesheets().add(StarterPage.class.getResource("../stylesheet/desktop.css").toExternalForm());
         hbox = new HBox();
+        hbox.setId("inner");
         setStageProperty();
         setHBoxProperty();
     }
