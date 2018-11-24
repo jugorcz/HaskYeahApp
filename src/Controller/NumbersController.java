@@ -24,9 +24,17 @@ public class NumbersController {
 
     public int[] generatorTestsNumbers(){
         int[] generatedNumbers=new int[4];
+        boolean [] numbertaken = new boolean[10];
+        for(int i=0;i<10;i++) numbertaken[i]=false;
         for(int i=0;i<3;i++) {
             Random r = new Random();
-            generatedNumbers[i] = r.nextInt((max - min) + 1) + min;
+            int j = r.nextInt((max - min) + 1) + min;
+            if(!numbertaken[j]) {
+                generatedNumbers[i] = j;
+                numbertaken[j]=true;
+            }
+            else i--;
+
         }
         correctAnswer = generatedNumbers[new Random().nextInt(generatedNumbers.length-1)];
         generatedNumbers[3]=correctAnswer;
