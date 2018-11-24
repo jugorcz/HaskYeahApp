@@ -67,6 +67,9 @@ public class NumbersPage {
         chosen = number.generatorOneNumber();
         this.imageView = new ImageView(getImage(chosen));
 
+        Button button = new Button();
+        button.setGraphic(imageView);
+
         Button prevBttn = new Button("<-");
         prevBttn.setId("loginBttn");
         prevBttn.setOnAction(new EventHandler<ActionEvent>() {
@@ -96,7 +99,7 @@ public class NumbersPage {
             }
         });
 
-        hbox.getChildren().addAll(prevBttn, imageView, nextBttn);
+        hbox.getChildren().addAll(prevBttn, button, nextBttn);
 
         root.getChildren().addAll(hbox, backBttn);
         root.setAlignment(Pos.CENTER);
