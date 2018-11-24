@@ -56,13 +56,24 @@ public class DesktopPage {
 
     public void showDesktopPage(){
 
-        Button loginBttn = new Button("Paint");
+        Button loginBttn = new Button("Numerki");
         loginBttn.setId("Paint");
         loginBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
                 NumberChoosePage starter = new NumberChoosePage();
                 starter.showNumberChoosePage();
+                owner.close();
+            }
+        });
+
+        Button letterBttn = new Button("Literki");
+        letterBttn.setId("Literki");
+        letterBttn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                LetterChoosePage starter = new LetterChoosePage();
+                starter.showLetterChoosePage();
                 owner.close();
             }
         });
@@ -76,7 +87,7 @@ public class DesktopPage {
             }
         });
 
-        root.getChildren().addAll(loginBttn, endGame);
+        root.getChildren().addAll(loginBttn, letterBttn, endGame);
         root.setAlignment(Pos.BASELINE_CENTER);
     }
 
