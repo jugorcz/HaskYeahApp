@@ -15,7 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class NumbersPage {
+public class NumberTestPage {
     private Stage owner;
     private int widthScene=650;
     private int heightScene=600;
@@ -31,21 +31,28 @@ public class NumbersPage {
     private int rootSpacing = 10;
     public HBox hbox;
     public NumbersController number;
-    public ImageView imageView;
+    public ImageView imageView1;
+    public ImageView imageView2;
+    public ImageView imageView3;
 
-    public NumbersPage(){
+    public NumberTestPage(){
 
         new JFXPanel();
         owner = new Stage(StageStyle.DECORATED);
-        root = new VBox();
-        scene = new Scene(root, widthScene, heightScene);
-        hbox = new HBox();
-        setStageProperty();
-        setHBoxProperty();
-        number = new NumbersController("");
+
     }
 
-    public void setStageProperty(){
+    public Scene setScene(){
+
+        root = new VBox();
+        Scene scene = new Scene(root, widthScene, heightScene);
+        hbox = new HBox();
+        setHBoxProperty();
+        number = new NumbersController("");
+        return scene;
+    }
+
+    public void setStageProperty(Scene scene){
         owner.setScene(scene);
         owner.setTitle(title);
         owner.setWidth(widthStage);
@@ -62,26 +69,43 @@ public class NumbersPage {
         hbox.setAlignment(Pos.CENTER);
     }
 
-    public void showNumbersPage(){
-        int chosen;
-        chosen = number.generatorOneNumber();
-        this.imageView = new ImageView(getImage(chosen));
+    public void showNumberTestPage(){
+        int[] chosen;
+        chosen = number.generatorTestsNumbers();
 
-        Button prevBttn = new Button("<-");
-        prevBttn.setId("loginBttn");
-        prevBttn.setOnAction(new EventHandler<ActionEvent>() {
+        this.imageView1 = new ImageView(getImage(chosen[0]));
+        this.imageView2 = new ImageView(getImage(chosen[1]));
+        this.imageView3 = new ImageView(getImage(chosen[2]));
+
+        Button button1 = new Button();
+        Button button2 = new Button();
+        Button button3 = new Button();
+
+        button1.setGraphic(imageView1);
+        button2.setGraphic(imageView2);
+        button3.setGraphic(imageView3);
+
+        button1.setId("go");
+        button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                handleArrow();
+                sendAnswer(chosen[0]);
             }
         });
 
-        Button nextBttn = new Button("->");
-        nextBttn.setId("loginBttn");
-        nextBttn.setOnAction(new EventHandler<ActionEvent>() {
+        button2.setId("go");
+        button2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                handleArrow();
+                sendAnswer(chosen[1]);
+            }
+        });
+
+        button3.setId("go");
+        button3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                sendAnswer(chosen[2]);
             }
         });
 
@@ -96,16 +120,17 @@ public class NumbersPage {
             }
         });
 
-        hbox.getChildren().addAll(prevBttn, imageView, nextBttn);
+        hbox.getChildren().addAll(button1, button2, button3);
 
         root.getChildren().addAll(hbox, backBttn);
         root.setAlignment(Pos.CENTER);
     }
 
-    public void handleArrow(){
-        int chosen;
-        chosen = number.generatorOneNumber();
-        this.imageView.setImage(getImage(chosen));
+    public void sendAnswer(int i){
+        number.iscorrect(Integer.toString(i));
+        scene = setScene();
+        showNumberTestPage();
+        owner.setScene(scene);
     }
 
     public Image getImage(int chosen){
