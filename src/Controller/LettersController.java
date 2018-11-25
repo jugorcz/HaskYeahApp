@@ -24,9 +24,11 @@ public class LettersController {
         boolean[] lettersTaken = new boolean[26];
         for(int i=0;i<3;i++) {
             Random r = new Random();
-            int j = r.nextInt((26) + 'a');
+
+            String p = String.valueOf(r.nextInt((26) + 'a'));
+            int j = Integer.valueOf(p);
             if(!lettersTaken[j%26]) {
-                generatedLetters[i] = String.valueOf(j);
+                generatedLetters[i] = p;
                 lettersTaken[j%26]=true;
             }
             else i--;

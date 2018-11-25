@@ -29,6 +29,7 @@ public class DesktopPage {
     private int leftMarg = 12;
     private int rootSpacing = 10;
 
+
     public DesktopPage(){
 
         new JFXPanel();
