@@ -2,20 +2,60 @@
     -fx-background-image: url("images/baloons.jpg");
 }
 
-.button {
-    -fx-background-color: white;
-    -fx-background-radius: 0;
-    -fx-font-size: 20px;
-    -fx-pref-width: 350px;
-}
 #go{
-    -fx-background-color: red;
+    -fx-background-color: white;
+    -fx-margin:25px ;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
-
 }
 
 #inner{
-    -fx-background-color:grey;
-    -fx-pref-width: 350px;
-    -fx-pref-height: 350px;
+    -fx-background-color:white;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-margin-left:50px;
+    -fx-margin-right:50px;
+}
+
+#teachBttn{
+    -fx-background-color: #efc9c9;
+    -fx-pref-width: 200px;
+    -fx-margin:25px ;
+    -fx-pref-highth: 150px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+#testBttn{
+    -fx-background-color: #9dc4db;
+    -fx-pref-width: 200px;
+    -fx-pref-highth: 150px;
+    -fx-margin:25px ;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+.button {
+     -fx-margin:25px ;
+     -fx-background-color: white;
+     -fx-background-radius: 0;
+     -fx-font-size: 20px;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+
+ }
+
+#Paint{
+    -fx-pref-width: 150px;
+    -fx-pref-height: 150px;
+}
+
+#bck{
+    -fx-background-color: #f2eecd;
+    -fx-pref-width:300px;
+    -fx-margin-bottom:10px;
+}
+
+#loginBttn{
+    -fx-pref-width: 25px;
+}
+
+#left{
+    -fx-pref-width:50px;
 }

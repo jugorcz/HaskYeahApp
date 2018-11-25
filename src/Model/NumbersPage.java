@@ -70,7 +70,7 @@ public class NumbersPage {
         this.imageView = new ImageView(getImage(chosen));
 
         Button prevBttn = new Button("<-");
-        prevBttn.setId("right");
+        prevBttn.setId("left");
         prevBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {

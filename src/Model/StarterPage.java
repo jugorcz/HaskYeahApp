@@ -148,7 +148,7 @@ public class StarterPage {
 
 
         Button goBttn = new Button("Go");
-        goBttn.setId("go");
+        goBttn.setId("bck");
         goBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {

@@ -24,11 +24,11 @@ public class NumberChoosePage {
     private String title = "Numbers";
     private Scene scene;
     private VBox root;
-    private int topMarg = 15;
-    private int rightMarg = 12;
-    private int bottomMarg = 15;
-    private int leftMarg = 12;
-    private int rootSpacing = 10;
+    private int topMarg = 20;
+    private int rightMarg = 30;
+    private int bottomMarg = 20;
+    private int leftMarg = 30;
+    private int rootSpacing = 50;
     public HBox hbox;
 
     public NumberChoosePage(){
@@ -87,7 +87,7 @@ public class NumberChoosePage {
         });
 
         Button backBttn = new Button("BACK");
-        backBttn.setId("go");
+        backBttn.setId("bck");
         backBttn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {

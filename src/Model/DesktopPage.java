@@ -23,11 +23,11 @@ public class DesktopPage {
     private String title = "Start";
     private Scene scene;
     private VBox root;
-    private int topMarg = 15;
-    private int rightMarg = 12;
-    private int bottomMarg = 15;
-    private int leftMarg = 12;
-    private int rootSpacing = 10;
+    private int topMarg = 50;
+    private int rightMarg = 40;
+    private int bottomMarg = 50;
+    private int leftMarg = 40;
+    private int rootSpacing = 100;
 
     public DesktopPage(){
 
@@ -68,7 +68,7 @@ public class DesktopPage {
         });
 
         Button endGame = new Button("QUIT");
-        endGame.setId("end");
+        endGame.setId("bck");
         endGame.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
